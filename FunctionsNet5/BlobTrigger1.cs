@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FunctionsNet5
 {
+    //example of a scenario that doesn't work. Passing a Stream in as a blob trigger has null data, and it won't write the blob to the BlobOutput
     public static class BlobTrigger1
     {
         [Function("BlobTrigger1")]
