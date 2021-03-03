@@ -21,7 +21,10 @@ namespace FunctionsNet5
         {
             var logger = context.GetLogger("BlobTrigger3");
 
+            // uri and other top-level metadata properties are read successfully
             logger.LogInformation("uri metadata: " + uri.ToString());
+            
+            //have not been able to read nested metadata properties
             logger.LogInformation("Blob type: " + properties.BlobType);
             logger.LogInformation($"C# Blob trigger function Processed blob\n Name:{name}: {myBlob}");
             
