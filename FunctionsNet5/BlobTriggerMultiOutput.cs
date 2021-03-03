@@ -9,10 +9,10 @@ namespace FunctionsNet5
     public static class BlobTriggerMultiOutput
     {
         [Function("BlobTriggerMultiOutput")]
-        public static MyOutputType Run([BlobTrigger("test-samples3/{name}", Connection = "AzureWebJobsStorage")] string myBlob, string name,
+        public static MyOutputType Run([BlobTrigger("test-samples4/{name}", Connection = "AzureWebJobsStorage")] string myBlob, string name,
             FunctionContext context)
         {
-            var logger = context.GetLogger("MultiOutput");
+            var logger = context.GetLogger("BlobTriggerMultiOutput");
             logger.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Data: {myBlob}");
 
             return new MyOutputType()
@@ -28,7 +28,7 @@ namespace FunctionsNet5
         [QueueOutput("destinationqueue", Connection = "AzureWebJobsStorage")]
         public string QueueOutput { get; set; }
 
-        [BlobOutput("destinationcontainer3/{name}", Connection = "AzureWebJobsStorage")]
+        [BlobOutput("destinationcontainer4/{name}", Connection = "AzureWebJobsStorage")]
         public string BlobOutput { get; set; }
     }
 }

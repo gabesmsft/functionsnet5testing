@@ -14,9 +14,9 @@ namespace FunctionsNet5
             string name,
             FunctionContext context)
         {
-            var logger = context.GetLogger("BlobTrigger1");
-           logger.LogInformation($"C# Blob trigger function Processed blob\n Name:{name}: {myBlob}");
-           return myBlob;
+            var logger = context.GetLogger("BlobTrigger2");
+            logger.LogInformation($"C# Blob trigger function Processed blob\n Name:{name}: {myBlob}");
+            return myBlob;
         }
     }
 }
