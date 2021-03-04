@@ -24,7 +24,7 @@ namespace FunctionsNet5
             // uri and other top-level metadata properties are read successfully
             logger.LogInformation("uri metadata: " + uri.ToString());
             
-            //have not been able to read nested metadata properties
+            //have not been able to read BlobProperties metadata properties. the following line will throw a null reference exception
             logger.LogInformation("Blob type: " + properties.BlobType);
             logger.LogInformation($"C# Blob trigger function Processed blob\n Name:{name}: {myBlob}");
             
